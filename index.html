@@ -2,59 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gapviz Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>gapviz · home</title>
 
+    <!-- GLOBAL GAPVIZ STYLES -->
+    <link rel="stylesheet" href="../style.css?v=3">
+    <link rel="stylesheet" href="../assets/global-header.css?v=3">
+    <link rel="stylesheet" href="home.css?v=3">
+    <link rel="stylesheet" href="../assets/fonts/space-grotesk.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
-<h1>Gapviz</h1>
+<!-- GLOBAL HEADER -->
+<div id="global-header">
+    <div class="profile-button" onclick="goBack()">SW</div>
+    <div id="header-icons"></div>
+</div>
 
-<h2 id="djStatus"></h2>
+<!-- MAIN HOME SCREEN -->
+<div id="home-screen">
+    <img id="home-logo" src="../fingerprint/images/gapviz-logo.svg" alt="Gapviz Logo">
+    <h1 id="welcome-text">welcome</h1>
 
-<button class="gv-button" onclick="location.href='add.html'">Add a New Song</button>
-<button class="gv-button" onclick="location.href='dj.html'">Set Your DJ Name</button>
+    <p class="placeholder">Your music. Their story.</p>
+</div>
 
+<!-- GLOBAL FOOTER -->
+<div id="bottom-nav">
 
-<h3>Your Songs</h3>
-<div id="songList">Loading songs...</div>
+    <div class="nav-item active" onclick="goHome()">
+        <img src="../assets/icons/home.svg" alt="Home">
+        <span>Home</span>
+        <div class="nav-underline"></div>
+    </div>
 
-<script>
-const djName = localStorage.getItem("gapvizDJName");
+    <div class="nav-item" onclick="goDJ()">
+        <img src="../assets/icons/dj.svg" alt="DJ">
+        <span>DJ</span>
+        <div class="nav-underline"></div>
+    </div>
 
-if (djName) {
-    document.getElementById("djStatus").innerText =
-        "Gapviz is On Air — your personal DJ, " + djName + ", is live.";
-} else {
-    document.getElementById("djStatus").innerText =
-        "Gapviz is On Air — your personal DJ is live.";
-}
+    <div class="nav-item" onclick="goLibrary()">
+        <img src="../assets/icons/library.svg" alt="Library">
+        <span>Library</span>
+        <div class="nav-underline"></div>
+    </div>
 
-fetch("http://127.0.0.1:3000/songs")
-    .then(response => response.json())
-    .then(songs => {
-        const list = document.getElementById("songList");
+    <div class="nav-item" onclick="goIdentify()">
+        <img src="../assets/icons/fingerprint.svg" alt="Identify">
+        <span>Identify</span>
+        <div class="nav-underline"></div>
+    </div>
 
-        if (songs.length === 0) {
-            list.innerText =
-                "Every playlist is full of stories. Add a few songs to begin.";
-            return;
-        }
+</div>
 
-        let html = "";
-        songs.forEach(song => {
-            html += "<p><strong>" + song.title + "</strong> by " + song.artist +
-                    " — <a href='song.html?id=" + song.id + "'>View</a></p>";
-        });
-
-        list.innerHTML = html;
-    })
-    .catch(error => {
-        document.getElementById("songList").innerText =
-            "Could not load songs.";
-        console.error(error);
-    });
-</script>
+<!-- GLOBAL NAVIGATION -->
+<script src="nav.js?v=1"></script>
 
 </body>
 </html>
