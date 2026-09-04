@@ -1,0 +1,183 @@
+/* ============================================================
+   DJ PERSONALITY SCREEN — CLEAN, SAFE, NO OVERFLOW
+   ============================================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden !important;
+}
+
+/* FIXED HEADER + FOOTER */
+#global-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* MAIN SCREEN */
+#dj-selection-screen {
+    position: fixed;
+    top: 70px;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+    overflow-y: auto;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+/* SAFE WRAPPER */
+#safe-wrapper {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* HEADINGS */
+#dj-selection-screen h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.placeholder {
+    font-size: 15px;
+    opacity: 0.75;
+    margin-bottom: 20px;
+}
+
+/* DJ CARDS */
+.dj-card {
+    position: relative;              /* anchor for the tick */
+    width: 100%;
+    max-width: 100%;
+    background: #050505;
+    border: 1px solid #8a1f1f;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;          /* stack emoji, title, desc, link */
+    gap: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.dj-card.active {
+    border-color: #ff2a2a;
+}
+
+.dj-left {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.dj-emoji {
+    font-size: 26px;
+}
+
+.dj-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.dj-desc {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* INNER LINK */
+.dj-inner-link {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #ff2a2a;
+    cursor: pointer;
+}
+
+/* TICK */
+.dj-tick {
+    position: absolute;        /* position inside the card */
+    top: 10px;                 /* distance from top edge of card */
+    right: 10px;               /* distance from right edge of card */
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;      /* never blocks taps on the card */
+}
+
+.tick-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #ff2a2a;
+    display: none;             /* hidden until card is active */
+    justify-content: center;
+    align-items: center;
+}
+
+.dj-card.active .tick-circle {
+    display: flex;             /* show tick when selected */
+}
+
+.tick-circle span {
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* MANAGE YOUR DJS BOX (OUTLINE, NO TICK) */
+.manage-card {
+    width: 100%;
+    max-width: 100%;
+    background: #050505;
+    border: 1px solid #8a1f1f;
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.manage-card:active {
+    border-color: #ff2a2a;
+}
+
+.manage-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.manage-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.manage-desc {
+    font-size: 14px;
+    opacity: 0.8;
+}

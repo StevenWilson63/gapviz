@@ -1,0 +1,258 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #ff2a2a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* FINGERPRINT SCREEN */
+#fingerprint-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: #ff2a2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+/* LOGO */
+#fp-logo {
+    width: 38vw;
+    max-width: 260px;
+    opacity: 0;
+    animation: fpFadeIn 1.5s forwards;
+    animation-delay: 0.5s;
+    margin-bottom: 40px;
+    display: block;
+}
+
+/* TOP TEXT */
+#fp-top-text {
+    font-size: 38px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fpFadeIn 1.5s forwards, fpPulseTextFade 2.2s infinite;
+    animation-delay: 1s;
+}
+
+/* FINGERPRINT WRAPPER */
+#fp-wrapper {
+    position: relative;
+    width: 38vw;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+/* FINGERPRINT IMAGE */
+#fp-icon {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* BOTTOM TEXT */
+#fp-bottom-text {
+    font-size: 20px;
+    margin-top: 25px;
+    opacity: 0;
+    animation: fpFadeIn 1.5s forwards;
+    animation-delay: 1.2s;
+}
+
+/* STATUS TEXT */
+.fp-status {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #ff2a2a;
+    opacity: 0;
+    animation: fpFadeIn 1.5s forwards;
+}
+
+/* SONG + STORY SCREEN */
+#song-story-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: #ff2a2a;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* HERO AREA */
+.song-hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+/* SQUARE WRAPPER FOR ALBUM ART */
+.album-art-wrapper {
+    width: min(80vw, 400px);
+    height: min(80vw, 400px);   /* forces perfect square */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;           /* crops rectangular images */
+}
+
+/* IMAGE FILLS THE SQUARE */
+.album-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* no stretching, just cropping */
+    display: block;
+    border-radius: 4px;         /* optional, looks premium */
+}
+
+/* SONG META */
+.song-meta {
+    padding: 16px;
+}
+
+.song-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.song-artist {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.song-divider {
+    height: 2px;
+    width: 80px;
+    background: #ff2a2a;
+}
+
+/* STORY */
+.story-container {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.story-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #f5f5f5;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* ACTION BUTTONS */
+.actions-container {
+    padding: 12px 16px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #000;
+}
+
+.gv-button {
+    background: #ff2a2a;
+    color: #000;
+    border: none;
+    padding: 10px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.gv-button:hover {
+    background: #ff4545;
+}
+
+/* ANIMATIONS */
+@keyframes fpPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.85; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fpFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes screenFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes screenFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fpPulseText {
+    0%   { transform: scale(1);   opacity: 1;   }
+    50%  { transform: scale(1.08); opacity: 0.85; }
+    100% { transform: scale(1);   opacity: 1;   }
+}
+
+@keyframes fpPulseTextFade {
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* DESKTOP TWEAKS */
+@media (min-width: 768px) {
+    .song-meta {
+        padding: 24px;
+    }
+
+    .story-container {
+        padding: 24px;
+    }
+
+    .song-title {
+        font-size: 26px;
+    }
+
+    .song-artist {
+        font-size: 18px;
+    }
+
+    .story-text {
+        font-size: 17px;
+    }
+
+    .actions-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .gv-button {
+        min-width: 160px;
+    }
+}

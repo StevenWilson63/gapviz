@@ -1,0 +1,134 @@
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#profile-screen {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#logo {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 28px;
+    text-transform: lowercase;
+}
+
+.card {
+    background: transparent !important;
+    border: 2px solid rgba(255,26,26,0.35) !important;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card:hover {
+    border: 2px solid #FF1A1A;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.6);
+}
+
+
+h2 {
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 14px;
+    text-transform: lowercase;
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+label {
+    font-size: 14px;
+    opacity: 0.7;
+    text-transform: lowercase;
+}
+
+.field p {
+    font-size: 16px;
+    margin: 4px 0 0 0;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #FF1A1A;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.logout {
+    background: #AA0000;
+}
+
+.delete {
+    background: #660000;
+}
+
+/* ============================================================
+   MOBILE — FULL WIDTH + BIGGER TEXT
+   ============================================================ */
+@media (max-width: 599px) {
+
+    #profile-screen {
+        width: 94%;
+        padding-top: 70px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 18px;
+        border-width: 2px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    .field p {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+}
