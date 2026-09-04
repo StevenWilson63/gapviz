@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gapviz · profile</title>
+
+    <!-- Shared profile button -->
+    <link rel="stylesheet" href="../assets/profile-button.css">
+
+    <!-- Profile screen CSS -->
+    <link rel="stylesheet" href="profile.css">
+
+    <!-- Space Grotesk font -->
+    <link rel="stylesheet" href="../assets/fonts/space-grotesk.css">
+
+    <!-- Mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!-- Profile Button -->
+<div class="profile-button" onclick="goBack()">SW</div>
+
+<div id="profile-screen">
+
+    <header>
+        <img src="../assets/images/gapviz-logo.svg" id="logo">
+        <h1>profile</h1>
+    </header>
+
+    <!-- Identity Section -->
+    <section class="card">
+        <h2>identity</h2>
+
+        <div class="field">
+            <label>name</label>
+            <p id="user-name">loading…</p>
+        </div>
+
+        <div class="field">
+            <label>phonetic name</label>
+            <p id="user-phonetic">loading…</p>
+        </div>
+
+        <div class="field">
+            <label>nickname</label>
+            <p id="user-nickname">loading…</p>
+        </div>
+    </section>
+
+    <!-- Account Section -->
+    <section class="card">
+        <h2>account</h2>
+
+        <div class="field">
+            <label>email</label>
+            <p id="user-email">loading…</p>
+        </div>
+
+        <div class="field">
+            <label>subscription</label>
+            <p id="user-tier">loading…</p>
+        </div>
+
+        <div class="field">
+            <label>days remaining</label>
+            <p id="user-days">loading…</p>
+        </div>
+
+        <button class="btn" onclick="openBilling()">billing at gapviz.com</button>
+        <button class="btn" onclick="changePassword()">change password</button>
+        <button class="btn logout" onclick="logout()">logout</button>
+        <button class="btn delete" onclick="deleteAccount()">delete account</button>
+    </section>
+
+    <!-- DJ Section -->
+    <section class="card">
+        <h2>your dj</h2>
+
+        <div class="field">
+            <label>current dj</label>
+            <p id="dj-name">loading…</p>
+        </div>
+
+        <button class="btn" onclick="goToDJSelection()">manage djs</button>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="card">
+        <h2>settings</h2>
+
+        <button class="btn" onclick="toggleNotifications()">notifications</button>
+        <button class="btn" onclick="togglePlaybackMode()">playback mode</button>
+    </section>
+
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

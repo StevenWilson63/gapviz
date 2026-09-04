@@ -1,0 +1,46 @@
+/* ============================================================
+   GLOBAL FIXED MOBILE HEADER
+   ============================================================ */
+
+#global-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+    z-index: 9999;
+    border-bottom: 1px solid #111;
+}
+
+/* Profile button inside header */
+#global-header .profile-button {
+    width: 42px;
+    height: 42px;
+    background: #FF1A1A;
+    color: #0A0A0A;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Space for future icons (right side) */
+#header-icons {
+    margin-left: auto;
+    display: flex;
+    gap: 18px;
+}
+
+#header-icons img {
+    width: 26px;
+    height: 26px;
+}

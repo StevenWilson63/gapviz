@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Song</title>
+</head>
+<body>
+
+<h1>Add a New Song</h1>
+
+<form id="songForm">
+    <label>Title:</label>
+    <input type="text" id="title"><br><br>
+
+    <label>Artist:</label>
+    <input type="text" id="artist"><br><br>
+
+    <label>Album:</label>
+    <input type="text" id="album"><br><br>
+
+    <label>Year:</label>
+    <input type="text" id="year"><br><br>
+
+    <label>Genre:</label>
+    <input type="text" id="genre"><br><br>
+
+    <label>Label:</label>
+    <input type="text" id="label"><br><br>
+
+    <label>Producer:</label>
+    <input type="text" id="producer"><br><br>
+
+    <label>Recording Studio:</label>
+    <input type="text" id="recordingStudio"><br><br>
+
+    <label>Writers:</label>
+    <input type="text" id="writers"><br><br>
+
+    <label>Engineers:</label>
+    <input type="text" id="engineers"><br><br>
+
+    <label>Release Date:</label>
+    <input type="text" id="releaseDate"><br><br>
+
+    <label>ISRC:</label>
+    <input type="text" id="isrc"><br><br>
+
+    <label>Duration:</label>
+    <input type="text" id="duration"><br><br>
+
+    <label>BPM:</label>
+    <input type="text" id="bpm"><br><br>
+
+    <label>Key:</label>
+    <input type="text" id="key"><br><br>
+
+    <label>Track Number:</label>
+    <input type="text" id="trackNumber"><br><br>
+
+    <label>Total Tracks:</label>
+    <input type="text" id="totalTracks"><br><br>
+
+    <label>Album Art URL:</label>
+    <input type="text" id="albumArtUrl"><br><br>
+
+    <button type="button" onclick="addSong()">Add Song</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+function addSong() {
+    const song = {
+        title: document.getElementById("title").value,
+        artist: document.getElementById("artist").value,
+        album: document.getElementById("album").value,
+        year: document.getElementById("year").value,
+        genre: document.getElementById("genre").value,
+        label: document.getElementById("label").value,
+        producer: document.getElementById("producer").value,
+        recordingStudio: document.getElementById("recordingStudio").value,
+        writers: document.getElementById("writers").value,
+        engineers: document.getElementById("engineers").value,
+        releaseDate: document.getElementById("releaseDate").value,
+        isrc: document.getElementById("isrc").value,
+        duration: document.getElementById("duration").value,
+        bpm: document.getElementById("bpm").value,
+        key: document.getElementById("key").value,
+        trackNumber: document.getElementById("trackNumber").value,
+        totalTracks: document.getElementById("totalTracks").value,
+        albumArtUrl: document.getElementById("albumArtUrl").value
+    };
+
+    fetch("http://127.0.0.1:3000/songs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(song)
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("message").innerText = "Song added successfully!";
+    })
+    .catch(error => {
+        document.getElementById("message").innerText = "Error adding song.";
+        console.error("Add Song Error:", error);
+    });
+}
+</script>
+
+</body>
+</html>

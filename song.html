@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song Details</title>
+</head>
+<body>
+
+<h1>Song Details</h1>
+
+<!-- Where the song info will appear -->
+<div id="songInfo">Loading song...</div>
+
+<!-- DJ introduction appears here -->
+<h3 id="djIntro"></h3>
+
+<!-- Commentary appears here -->
+<p id="commentary"></p>
+
+<script>
+// Get the song ID from the page address
+const urlParams = new URLSearchParams(window.location.search);
+const songId = urlParams.get("id");
+
+// Load the DJ name (if the user saved one)
+const djName = localStorage.getItem("gapvizDJName");
+
+// Load the song details from your backend
+fetch("http://127.0.0.1:3000/songs/" + songId)
+    .then(response => response.json())
+    .then(song => {
+        // Build the song details section
+        let html = "";
+        html += "<p><strong>Title:</strong> " + song.title + "</p>";
+        html += "<p><strong>Artist:</strong> " + song.artist + "</p>";
+        html += "<p><strong>Album:</strong> " + song.album + "</p>";
+        html += "<p><strong>Year:</strong> " + song.year + "</p>";
+
+        // Show album art if available
+        if (song.albumArtUrl) {
+            html += "<img src='" + song.albumArtUrl + "' alt='Album Art' width='200'>";
+        }
+
+        document.getElementById("songInfo").innerHTML = html;
+
+        // Now load the commentary
+        return fetch("http://127.0.0.1:3000/rag/" + songId);
+    })
+    .then(response => response.json())
+    .then(data => {
+        // DJ introduction ABOVE the commentary
+        if (djName) {
+            document.getElementById("djIntro").innerText =
+                djName + " says: Let’s dive into the story behind this track…";
+        } else {
+            document.getElementById("djIntro").innerText =
+                "Your DJ says: Let’s dive into the story behind this track…";
+        }
+
+        // Show the commentary text
+        document.getElementById("commentary").innerText = data.commentary;
+    })
+    .catch(error => {
+        document.getElementById("songInfo").innerText =
+            "Could not load song details.";
+        console.error(error);
+    });
+</script>
+
+</body>
+</html>

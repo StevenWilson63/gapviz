@@ -1,0 +1,24 @@
+/* ============================================================
+   LIBRARY SCREEN — EMPTY MOBILE VERSION
+   ============================================================ */
+
+#library-screen {
+    padding-top: 100px; /* scroll under global header */
+    padding-bottom: 80px; /* avoid bottom nav overlap */
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 300;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+}
+
+.placeholder {
+    opacity: 0.6;
+    font-size: 16px;
+}

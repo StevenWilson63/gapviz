@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gapviz · story</title>
+
+    <!-- GLOBAL GAPVIZ STYLES -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/global-header.css">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="identify-story.css">
+    <link rel="stylesheet" href="../assets/fonts/space-grotesk.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!-- GLOBAL HEADER -->
+<div id="global-header">
+    <div class="profile-button" onclick="goBack()">SW</div>
+    <div id="header-icons"></div>
+</div>
+
+<!-- STORY SCREEN -->
+<div id="story-screen">
+
+    <h1>story</h1>
+
+    <div id="story-content">
+        <p class="story-line">
+            This is where the identified song’s story will appear.
+        </p>
+
+        <p class="story-line">
+            Commentary, background, artist notes, and narrative will be displayed here.
+        </p>
+
+        <p class="story-line">
+            This screen will later be replaced with the full dynamic RAG-driven commentary engine.
+        </p>
+    </div>
+
+</div>
+
+<!-- GLOBAL FOOTER -->
+<div id="bottom-nav">
+
+    <div class="nav-item" onclick="goHome()">
+        <img src="../assets/icons/home.svg" alt="Home">
+        <span>Home</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item" onclick="goDJ()">
+        <img src="../assets/icons/dj.svg" alt="DJ">
+        <span>DJ</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item" onclick="goLibrary()">
+        <img src="../assets/icons/library.svg" alt="Library">
+        <span>Library</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item active" onclick="goIdentify()">
+        <img src="../assets/icons/fingerprint.svg" alt="Identify">
+        <span>Identify</span>
+        <div class="nav-underline"></div>
+    </div>
+
+</div>
+
+<!-- GLOBAL NAVIGATION -->
+<script src="nav.js?v=1"></script>
+
+<!-- STORY LOGIC (placeholder for future RAG engine) -->
+<script src="identify-story.js?v=1"></script>
+
+</body>
+</html>

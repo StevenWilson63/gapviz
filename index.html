@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gapviz Home</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h1>Gapviz</h1>
+
+<h2 id="djStatus"></h2>
+
+<button class="gv-button" onclick="location.href='add.html'">Add a New Song</button>
+<button class="gv-button" onclick="location.href='dj.html'">Set Your DJ Name</button>
+
+
+<h3>Your Songs</h3>
+<div id="songList">Loading songs...</div>
+
+<script>
+const djName = localStorage.getItem("gapvizDJName");
+
+if (djName) {
+    document.getElementById("djStatus").innerText =
+        "Gapviz is On Air — your personal DJ, " + djName + ", is live.";
+} else {
+    document.getElementById("djStatus").innerText =
+        "Gapviz is On Air — your personal DJ is live.";
+}
+
+fetch("http://127.0.0.1:3000/songs")
+    .then(response => response.json())
+    .then(songs => {
+        const list = document.getElementById("songList");
+
+        if (songs.length === 0) {
+            list.innerText =
+                "Every playlist is full of stories. Add a few songs to begin.";
+            return;
+        }
+
+        let html = "";
+        songs.forEach(song => {
+            html += "<p><strong>" + song.title + "</strong> by " + song.artist +
+                    " — <a href='song.html?id=" + song.id + "'>View</a></p>";
+        });
+
+        list.innerHTML = html;
+    })
+    .catch(error => {
+        document.getElementById("songList").innerText =
+            "Could not load songs.";
+        console.error(error);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gapviz · dj personality</title>
+
+    <link rel="stylesheet" href="../style.css?v=2">
+    <link rel="stylesheet" href="../assets/global-header.css?v=2">
+    <link rel="stylesheet" href="dj-selection.css?v=4">
+    <link rel="stylesheet" href="../assets/fonts/space-grotesk.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!-- FIXED HEADER -->
+<div id="global-header">
+    <div class="profile-button" onclick="goBack()">SW</div>
+    <div id="header-icons"></div>
+</div>
+
+<!-- MAIN SCREEN -->
+<div id="dj-selection-screen">
+
+    <h1>Your DJ Style</h1>
+    <p class="placeholder">Choose the personality that tells your story.</p>
+
+    <div id="safe-wrapper">
+
+        <!-- Rock Jock -->
+        <div class="dj-card" data-persona="rock">
+            <div class="dj-left">
+                <div class="dj-emoji">🎸</div>
+                <div class="dj-title" id="title-rock">The Rock Jock</div>
+                <div class="dj-desc">Energetic, punchy, loves the drama.</div>
+                <div class="dj-inner-link">
+    <span class="dj-inner-link-text" id="inner-rock">Create your DJ</span>
+</div>
+            </div>
+            <div class="dj-tick">
+                <div class="tick-circle"><span>✓</span></div>
+            </div>
+        </div>
+
+        <!-- Cool Friend -->
+        <div class="dj-card" data-persona="cool">
+            <div class="dj-left">
+                <div class="dj-emoji">😎</div>
+                <div class="dj-title" id="title-cool">The Cool Friend</div>
+                <div class="dj-desc">Relaxed, conversational, dry humour.</div>
+                <div class="dj-inner-link">
+    <span class="dj-inner-link-text" id="inner-cool">Create your DJ</span>
+</div>
+            </div>
+            <div class="dj-tick">
+                <div class="tick-circle"><span>✓</span></div>
+            </div>
+        </div>
+
+        <!-- Curator -->
+        <div class="dj-card" data-persona="curator">
+            <div class="dj-left">
+                <div class="dj-emoji">🎓</div>
+                <div class="dj-title" id="title-curator">The Curator</div>
+                <div class="dj-desc">Calm, intelligent, documentary style.</div>
+                <div class="dj-inner-link">
+    <span class="dj-inner-link-text" id="inner-curator">Create your DJ</span>
+</div>
+            </div>
+            <div class="dj-tick">
+                <div class="tick-circle"><span>✓</span></div>
+            </div>
+        </div>
+
+        <!-- Late Night Spinner -->
+        <div class="dj-card" data-persona="spinner">
+            <div class="dj-left">
+                <div class="dj-emoji">🌙</div>
+                <div class="dj-title" id="title-spinner">Late Night Spinner</div>
+                <div class="dj-desc">Smooth, atmospheric, almost poetic.</div>
+                <div class="dj-inner-link">
+    <span class="dj-inner-link-text" id="inner-spinner">Create your DJ</span>
+</div>
+            </div>
+            <div class="dj-tick">
+                <div class="tick-circle"><span>✓</span></div>
+            </div>
+        </div>
+
+        <!-- MANAGE YOUR DJS BOX (OUTLINE, NO TICK) -->
+        <div class="manage-card" onclick="goManageDJ()">
+            <div class="manage-left">
+                <div class="manage-title">Manage your DJs</div>
+                <div class="manage-desc">View, add, edit and save your DJs.</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FIXED FOOTER -->
+<div id="bottom-nav">
+
+    <div class="nav-item" onclick="goHome()">
+        <img src="../assets/icons/home.svg" alt="Home">
+        <span>Home</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item active" onclick="goDJ()">
+        <img src="../assets/icons/dj.svg" alt="DJ">
+        <span>DJ</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item" onclick="goLibrary()">
+        <img src="../assets/icons/library.svg" alt="Library">
+        <span>Library</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item" onclick="goIdentify()">
+        <img src="../assets/icons/fingerprint.svg" alt="Identify">
+        <span>Identify</span>
+        <div class="nav-underline"></div>
+    </div>
+
+</div>
+
+<script src="dj-selection.js?v=4"></script>
+<script src="nav.js?v=1"></script>
+
+</body>
+</html>

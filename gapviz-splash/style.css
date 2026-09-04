@@ -1,0 +1,220 @@
+/* GLOBAL LOCK + RESET */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;        /* prevents scrolling or dragging */
+    position: fixed;         /* locks the screen in place */
+    left: 0;
+    top: 0;
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+/* SPLASH SCREEN CONTAINER */
+#splash-screen {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GAPVIZ LOGO */
+#logo {
+    width: 75vw;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeIn 7s forwards;
+}
+
+/* TAGLINE — FIXED TO STAY ON ONE LINE WITH NORMAL SPACING */
+#tagline {
+    margin-top: 20px;
+    font-size: 26px;
+    color: #ff2a2a;
+    max-width: 75vw;
+    overflow-wrap: break-word;
+    text-align: center;
+
+    display: inline-block;
+    white-space: nowrap;     /* keeps both phrases on one line */
+}
+
+#tagline span {
+    display: inline;         /* normal inline text */
+    margin: 0;               /* removes extra spacing */
+}
+
+/* TAGLINE TIMING — FASTER + WHITE TEXT */
+#tagline span {
+    color: #FFFFFF; /* ⭐ White text */
+}
+
+#tag1 {
+    opacity: 0;
+    animation: showText 0s forwards;
+    animation-delay: 2.2s; /* ⭐ Faster */
+}
+
+#tag2 {
+    opacity: 0;
+    animation: showText 0s forwards;
+    animation-delay: 3.4s; /* ⭐ Faster */
+}
+
+@keyframes showText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* ON AIR BOX — NOW APPEARS BEFORE WELCOME BACK */
+#onair {
+    margin-top: 40px;
+    padding: 8px 24px;
+    border: 3px solid #ff2a2a;
+    color: #ff2a2a;
+    font-size: 28px;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 4s;     /* moved earlier */
+}
+
+#onair span {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* GREETING — NOW APPEARS AFTER ON AIR */
+#greeting {
+    margin-top: 25px;
+    font-size: 22px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;   /* smoother fade */
+    animation-delay: 6.5s;             /* same timing */
+}
+
+
+/* TAP INSTRUCTION — NOW APPEARS LAST */
+#tap-instruction {
+    margin-top: 35px;
+    font-size: 18px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 5s;     /* appears last */
+    max-width: 90vw;
+    padding: 0 20px;
+    text-align: center;
+}
+
+
+
+/* FADE-IN KEYFRAME */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* -------------------------------------------------- */
+/* MOBILE + SMALL TABLET STYLES                       */
+/* -------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    #logo {
+        width: 80vw !important;
+        max-width: 80vw !important;
+        margin-top: 60px !important;
+    }
+
+   #tagline {
+    max-width: 70vw !important;      /* narrower than the logo */
+    font-size: 26px !important;      /* slightly smaller */
+    margin-top: 20px !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+}
+
+#tagline span {
+    display: inline !important;
+    margin: 0 !important;            /* single natural space */
+}
+
+
+    #onair {
+        font-size: 32px !important;
+        padding: 10px 30px !important;
+       margin-top: 36px !important;
+    border: 3px solid #ff2a2a;
+    color: #ff2a2a;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 4.0s;
+}
+
+}   
+/* --------------------------------------------- */
+/* NEW USER SUBSCRIBER BLOCK                     */
+/* --------------------------------------------- */
+
+#subscriber-block {
+    margin-top: 45px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 6s; /* appears after tap instruction */
+    text-align: center;
+}
+
+/* Discover Gapviz — join now */
+#discover-line {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+/* Join now capsule */
+#join-capsule {
+    display: inline-block;
+    background: #ff2a2a;        /* Gapviz red */
+    color: #000000;             /* black text */
+    padding: 12px 28px;
+    border-radius: 999px;       /* full capsule */
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 22px;
+    transition: opacity 0.2s ease;
+}
+
+#join-capsule:hover {
+    opacity: 0.85;
+}
+
+#join-capsule:active {
+    opacity: 0.75;
+}
+
+/* Free trial lines */
+#trial-line {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+#nocard-line {
+    font-size: 18px;
+    color: #ffffff;
+}

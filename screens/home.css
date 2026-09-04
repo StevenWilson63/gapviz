@@ -1,0 +1,75 @@
+/* ============================================================
+   HOME SCREEN — MOBILE LAYOUT (MEDIUM LOGO, CENTERED)
+   ============================================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden; /* stop sideways scrolling */
+}
+
+/* MAIN HOME SCREEN WRAPPER */
+#home-screen {
+    position: fixed;
+    top: 70px;                          /* below header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 140px);        /* full middle area */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;            /* TRUE vertical centering */
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+    padding: 0 !important;              /* override .screen padding */
+    margin: 0 !important;               /* ensure no inherited margins */
+}
+
+
+
+/* MEDIUM GAPVIZ LOGO */
+#home-logo {
+    width: 180px;
+    max-width: 60%;
+    display: block;
+    margin: 0 auto 25px auto;
+}
+
+/* TITLE */
+#home-screen h1 {
+    font-size: 32px;
+    margin: 0 0 10px 0;
+}
+
+/* SUBTEXT */
+.placeholder {
+    font-size: 18px;
+    opacity: 0.75;
+    margin-top: 5px;
+}
+
+/* FOOTER NAV HEIGHT */
+#bottom-nav {
+    height: 70px;
+}
+
+
+
+#bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+#home-screen {
+    z-index: 1 !important;
+}
+
+
+

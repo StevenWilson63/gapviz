@@ -1,0 +1,143 @@
+/* FORCE OVERRIDE OF OLD NAV CSS */
+#bottom-nav {
+    border-top: 1px solid #111 !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    height: 70px !important;
+}
+
+.nav-item {
+    width: 80px !important;
+}
+
+.nav-item img {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.nav-underline {
+    width: 20px !important;
+    height: 3px !important;
+    background-color: transparent !important;
+}
+
+.nav-item.active .nav-underline {
+    background-color: #FF1A1A !important;
+}
+
+/* GLOBAL PAGE RESET */
+html, body {
+    background: #000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* MAIN STORY SCREEN */
+#song-story-screen {
+    padding-top: 100px;        /* scroll under fixed header */
+    padding-bottom: 120px;     /* leave space for bottom nav */
+    width: 90%;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+
+/* Album Art */
+.song-hero {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.album-art-wrapper {
+    width: 80%;
+    max-width: 320px;
+}
+
+.album-art {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* Song Meta */
+.song-meta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.song-title {
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.song-artist {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.song-divider {
+    width: 60px;
+    height: 2px;
+    background: #FF1A1A;
+    margin: 0 auto;
+}
+
+/* Story Text */
+.story-container {
+    margin-top: 20px;
+}
+
+.story-text {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.actions-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gv-button {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 2px solid rgba(255, 26, 26, 0.35); /* soft red outline */
+    border-radius: 10px;
+    color: #FF1A1A;
+    font-size: 18px;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: border 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.gv-button:active {
+    border-color: #FF1A1A; /* bright red */
+    color: #FF1A1A;
+    box-shadow: 0px 0px 12px rgba(255, 26, 26, 0.6); /* red glow */
+}
+
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 4px;
+    opacity: 0.9;
+}
+
+/* MATCH BOTTOM NAV TO FULL SCREEN BLACK */
+#bottom-nav {
+    background-color: #000 !important;
+}
+
+/* REMOVE SEAM ABOVE BOTTOM NAV */
+#song-story-screen {
+    background-color: #000;
+}

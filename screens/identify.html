@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gapviz · identify</title>
+
+    <!-- GLOBAL GAPVIZ STYLES -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/global-header.css">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="identify.css">
+    <link rel="stylesheet" href="../assets/fonts/space-grotesk.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!-- FIXED HEADER -->
+<div id="global-header">
+    <div class="profile-button" onclick="goBack()">SW</div>
+    <div id="header-icons"></div>
+</div>
+
+<!-- CINEMATIC IDENTIFY SCREEN -->
+<div id="identify-screen">
+
+    <img id="fp-logo" src="../fingerprint/images/gapviz-logo.svg" alt="Gapviz Logo">
+
+    <div id="fp-top-text">Tap</div>
+
+    <div id="fp-wrapper">
+        <img id="fp-icon" src="../fingerprint/images/fingerprint-red.png" alt="Fingerprint">
+    </div>
+
+    <div id="fp-bottom-text">unlock the song and story</div>
+
+    <div id="fp-status"></div>
+
+</div>
+
+<!-- FIXED FOOTER -->
+<div id="bottom-nav">
+
+    <div class="nav-item" onclick="goHome()">
+        <img src="../assets/icons/home.svg" alt="Home">
+        <span>Home</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item" onclick="goDJ()">
+        <img src="../assets/icons/dj.svg" alt="DJ">
+        <span>DJ</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item" onclick="goLibrary()">
+        <img src="../assets/icons/library.svg" alt="Library">
+        <span>Library</span>
+        <div class="nav-underline"></div>
+    </div>
+
+    <div class="nav-item active" onclick="goIdentify()">
+        <img src="../assets/icons/fingerprint.svg" alt="Identify">
+        <span>Identify</span>
+        <div class="nav-underline"></div>
+    </div>
+
+</div>
+
+<!-- GLOBAL NAVIGATION -->
+<script src="nav.js?v=1"></script>
+
+<!-- CINEMATIC LOGIC -->
+<script src="identify.js?v=1"></script>
+
+</body>
+</html>

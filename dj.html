@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Your DJ Name</title>
+</head>
+<body>
+
+<h1>Set Up Your Gapviz DJ</h1>
+
+<p>Give your DJ a name. This is who will be "On Air" when you use Gapviz.</p>
+
+<label for="djName">DJ Name:</label>
+<input type="text" id="djName" placeholder="e.g. Rock DJ">
+<button type="button" onclick="saveDJName()">Save DJ Name</button>
+
+<p id="message"></p>
+
+<script>
+function saveDJName() {
+    const name = document.getElementById("djName").value;
+
+    if (!name) {
+        document.getElementById("message").innerText =
+            "Please type a DJ name before saving.";
+        return;
+    }
+
+    localStorage.setItem("gapvizDJName", name);
+
+    document.getElementById("message").innerText =
+        "Your DJ name is saved. Gapviz will use \"" + name + "\" as your personal DJ.";
+}
+</script>
+
+</body>
+</html>
